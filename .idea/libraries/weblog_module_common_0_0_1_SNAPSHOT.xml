@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="weblog-module-common-0.0.1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/weblog-springboot/weblog-module-common/target/weblog-module-common-0.0.1-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
