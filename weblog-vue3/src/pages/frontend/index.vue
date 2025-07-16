@@ -3,7 +3,7 @@
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="/" class="flex items-center">
                 <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">xzj的博客</span>
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">犬小哈的博客</span>
             </a>
             <div class="flex items-center md:order-2">
                 <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
