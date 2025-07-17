@@ -4,7 +4,7 @@ import AdminIndex from '@/pages/admin/index.vue'
 import AdminArticleList from '@/pages/admin/article-list.vue'
 import AdminCategoryList from '@/pages/admin/category-list.vue'
 import AdminTagList from '@/pages/admin/tag-list.vue'
-import AdminBlogSetting from '@/pages/admin/blog-setting.vue'
+import AdminBlogSettings from '@/pages/admin/blog-settings.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Admin from '@/layouts/admin/admin.vue'
 
@@ -58,8 +58,8 @@ const routes = [
                 }
             },
             {
-                path: "/admin/blog/setting",
-                component: AdminBlogSetting,
+                path: "/admin/blog/settings",
+                component: AdminBlogSettings,
                 meta: {
                     title: '博客设置'
                 }
