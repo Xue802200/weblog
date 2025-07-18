@@ -7,7 +7,9 @@ import com.quanxiaoha.weblog.admin.model.vo.category.DeleteCategoryReqVO;
 import com.quanxiaoha.weblog.admin.model.vo.category.FindCategoryPageListReqVO;
 import com.quanxiaoha.weblog.admin.model.vo.category.FindCategoryPageListRspVO;
 import com.quanxiaoha.weblog.admin.service.AdminCategoryService;
+import com.quanxiaoha.weblog.common.domain.dos.ArticleCategoryRelDO;
 import com.quanxiaoha.weblog.common.domain.dos.CategoryDO;
+import com.quanxiaoha.weblog.common.domain.mapper.ArticleCategoryRelMapper;
 import com.quanxiaoha.weblog.common.domain.mapper.CategoryMapper;
 import com.quanxiaoha.weblog.common.enums.ResponseCodeEnum;
 import com.quanxiaoha.weblog.common.exception.BizException;
@@ -32,6 +34,8 @@ public class AdminCategoryServiceImpl implements AdminCategoryService {
 
     @Autowired
     private CategoryMapper  categoryMapper;
+    @Autowired
+    private ArticleCategoryRelMapper articleCategoryRelMapper;
 
 
     /**
@@ -120,14 +124,17 @@ public class AdminCategoryServiceImpl implements AdminCategoryService {
         //获取分类id
         Long categoryId = deleteCategoryReqVO.getId();
 
-        //执行删除逻辑
-        int i = categoryMapper.deleteById(categoryId);
-
-        if(i == 0){
-            return Response.fail("删除失败,不存在这个id");
+        //校验该分类是否有其他文章,有则不能删除
+        ArticleCategoryRelDO articleCategoryRelDO = articleCategoryRelMapper.selectOneByCategoryId(categoryId);
+        if(Objects.nonNull(articleCategoryRelDO)){
+            log.warn("此分类下包含文章,无法删除,categoryId:{}",categoryId);
+            throw new BizException(ResponseCodeEnum.CATEGORY_CAN_NOT_DELETE);
         }
 
-        return Response.success("删除成功");
+        //执行删除逻辑
+        int count = categoryMapper.deleteById(categoryId);
+
+        return count != 0 ? Response.success("删除成功") : Response.fail(ResponseCodeEnum.CATEGORY_CAN_NOT_DELETE);
     }
 
     /**
