@@ -101,6 +101,17 @@
                 <version>${jackson.version}</version>
             </dependency>
 
+            <!-- Jackson 统一版本管理 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
             <!-- knife4j（API 文档工具） -->
             <dependency>
                 <groupId>com.github.xiaoymin</groupId>
