@@ -5,7 +5,7 @@ import com.quanxiaoha.weblog.web.model.vo.article.FindIndexArticlePageListRspVO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface ArticleConvert {
 
     ArticleConvert INSTANCE = Mappers.getMapper(ArticleConvert.class);
