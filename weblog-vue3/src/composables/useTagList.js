@@ -55,6 +55,7 @@ export function useTabList() {
 
     // 标签页切换事件
     const tabChange = (path) => {
+        console.log('切回了')
         // 设置被激活的 Tab 标签
         activeTab.value = path
         // 路由跳转

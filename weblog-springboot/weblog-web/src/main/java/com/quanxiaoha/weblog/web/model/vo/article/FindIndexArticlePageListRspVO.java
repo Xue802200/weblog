@@ -24,10 +24,10 @@ public class FindIndexArticlePageListRspVO {
     /**
      * 文章分类
      */
-    private FindCategoryListRspVO findCategoryListRspVO;
+    private FindCategoryListRspVO category;
 
     /**
      * 文章标签集合
      */
-    private List<FindTagListRspVO> findTagListRspVOList;
+    private List<FindTagListRspVO> tags;
 }

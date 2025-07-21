@@ -17,12 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * @author: 犬小哈
- * @url: www.quanxiaoha.com
- * @date: 2023-08-24 15:19
- * @description: 认证失败处理器
- **/
+
 @Component
 @Slf4j
 public class RestAuthenticationFailureHandler implements AuthenticationFailureHandler {

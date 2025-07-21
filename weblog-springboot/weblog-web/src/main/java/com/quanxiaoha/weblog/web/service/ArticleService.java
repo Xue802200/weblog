@@ -11,5 +11,5 @@ public interface ArticleService {
      * @param findIndexArticlePageListReqVO
      * @return
      */
-    PageResponse findArticlePageList(FindIndexArticlePageListReqVO findIndexArticlePageListReqVO);
+    Response findArticlePageList(FindIndexArticlePageListReqVO findIndexArticlePageListReqVO);
 }

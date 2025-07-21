@@ -38,13 +38,23 @@ public interface ArticleCategoryRelMapper extends BaseMapper<ArticleCategoryRelD
                 .last("LIMIT 1"));
     }
 
+//    /**
+//     * 根据文章id集合查询出对应的分类信息
+//     * @param idList
+//     * @return
+//     */
+//    default List<ArticleCategoryRelDO> selectByArticleIds(List<Long> idList){
+//        return selectList(Wrappers.<ArticleCategoryRelDO>lambdaQuery()
+//                .eq(ArticleCategoryRelDO::getArticleId, idList));
+//    }
+
     /**
-     * 根据文章id集合查询出对应的分类信息
-     * @param idList
+     * 根据文章 ID 集合批量查询
+     * @param articleIds
      * @return
      */
-    default List<ArticleCategoryRelDO> selectByArticleIds(List<Long> idList){
+    default List<ArticleCategoryRelDO> selectByArticleIds(List<Long> articleIds) {
         return selectList(Wrappers.<ArticleCategoryRelDO>lambdaQuery()
-                .eq(ArticleCategoryRelDO::getArticleId, idList));
+                .in(ArticleCategoryRelDO::getArticleId, articleIds));
     }
 }

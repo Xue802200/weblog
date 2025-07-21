@@ -1,5 +1,6 @@
 package com.quanxiaoha.weblog.admin.service.impl;
 
+import com.quanxiaoha.weblog.admin.model.vo.file.UploadFileRspVO;
 import com.quanxiaoha.weblog.admin.service.AdminFileService;
 import com.quanxiaoha.weblog.admin.utils.MinioUtil;
 import com.quanxiaoha.weblog.common.enums.ResponseCodeEnum;
@@ -19,13 +20,13 @@ public class AdminFileServiceImpl implements AdminFileService {
     private MinioUtil minioUtil;
 
     @Override
-    public Response uploadFile(MultipartFile file) {
+    public Response  uploadFile(MultipartFile file) {
         try {
             //上传文件
             String url = minioUtil.uploadFile(file);
 
             //构建成功，将图片的访问链接返回
-            return Response.success(url);
+            return Response.success(UploadFileRspVO.builder().url(url).build());
         } catch (Exception e) {
             log.error("==> 上传文件至 Minio 错误: ", e);
             // 手动抛出业务异常，提示 “文件上传失败”
