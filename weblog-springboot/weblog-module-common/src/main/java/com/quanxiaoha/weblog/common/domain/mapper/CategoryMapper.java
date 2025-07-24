@@ -19,4 +19,5 @@ public interface CategoryMapper extends BaseMapper<CategoryDO> {
         // 执行查询
         return selectOne(wrapper);
     }
+
 }

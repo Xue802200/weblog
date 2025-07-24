@@ -12,6 +12,9 @@ import router from '@/router'
 import '@/permission'
 // 导入 Element Plus 图标
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+// 图片点击放大
+import 'viewerjs/dist/viewer.css'
+import VueViewer from 'v-viewer'
 
 const app = createApp(App)
 
@@ -24,5 +27,7 @@ app.use(pinia)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
 }
+
+app.use(VueViewer)
 
 app.mount('#app')

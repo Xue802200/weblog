@@ -35,6 +35,7 @@ public class AdminArticleController {
     @PostMapping("/delete")
     @ApiOperation(value = "删除文章接口")
     @ApiOperationLog(description = "删除文章接口")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Response deleteArticle(@RequestBody @Validated DeleteArticleReqVO deleteArticleReqVO){
         return adminArticleService.deleteArticle(deleteArticleReqVO);
     }
@@ -56,6 +57,7 @@ public class AdminArticleController {
     @PostMapping("/update")
     @ApiOperation(value = "更新文章接口")
     @ApiOperationLog(description = "更新文章接口")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Response updateArticle(@RequestBody @Validated UpdateArticleReqVO updateArticleReqVO){
         return adminArticleService.updateArticle(updateArticleReqVO);
     }

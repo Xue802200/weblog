@@ -3,7 +3,6 @@ package com.quanxiaoha.weblog.common.exception;
 import com.quanxiaoha.weblog.common.enums.ResponseCodeEnum;
 import com.quanxiaoha.weblog.common.utils.Response;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;

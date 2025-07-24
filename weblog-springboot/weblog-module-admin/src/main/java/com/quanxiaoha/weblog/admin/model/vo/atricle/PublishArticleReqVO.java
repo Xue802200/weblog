@@ -1,5 +1,6 @@
 package com.quanxiaoha.weblog.admin.model.vo.atricle;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,6 +18,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @ApiModel(value = "发布文章 VO")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PublishArticleReqVO {
 
     @NotBlank(message = "文章标题不能为空")
